@@ -1,4 +1,3 @@
-
 const btnSelector = document.querySelector(".button-dog");
 const imgSelector = document.querySelector("img");
 const inputSelector = document.querySelector("#dog-input");
@@ -33,17 +32,17 @@ getBreeds()
 selectBreed.addEventListener('change', e => {
     e.preventDefault();
     const selectDog = selectBreed.options[selectBreed.selectedIndex].value;
-    let url = `https://dog.ceo/api/breed/${selectDog}/images/random`;
-
+    const url = `https://dog.ceo/api/breed/${selectDog}/images/random`;
     getDog(url)
+    inputSelector.value = ""
+
+
 })
 
 btnSelector.addEventListener('click', e => {
     e.preventDefault();
-    let breed = inputSelector.value;
-    let url = `https://dog.ceo/api/breed/${breed}/images/random`;
+    const breed = inputSelector.value;
+    const url = `https://dog.ceo/api/breed/${breed}/images/random`;
     getDog(url)
     inputSelector.value = ""
-
 })
-
