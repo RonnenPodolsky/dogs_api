@@ -24,3 +24,8 @@ h1, input{
 img{
     width: 300px;
 }
+
+input[type=text], input[type=button] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    }
