@@ -1,6 +1,3 @@
-* {
-    box-sizing: border-box;
-}
 button {
     display: inline-block;
     cursor: pointer;
@@ -15,24 +12,19 @@ div{
     margin: auto;
     text-align: center;
     background-color: lightcoral;
-    display: flex;
+    overflow: hidden;
 }
 
-div > * {
-    flex-grow: 1;
-    margin: 0;
-    margin: auto;
-}
 
 h1{
     font-size: 17px;
 }
-/* h1, input{
+h1, input{
     margin: 3px;
-} */
+}
 
 img{
-    width: 300px;
+    max-width: 100%;
 }
 
 input[type=text], input[type=button], button {
