@@ -4,8 +4,7 @@ const inputSelector = document.querySelector("#dog-input");
 const allBreeds = document.querySelector("#dog-breeds");
 const selectBreed = document.querySelector("select")
 
-const updateSelectBreed = async (breeds) => {
-    console.log(breeds)
+const updateSelectBreed = (breeds) => {
     for (const breed of breeds){
         allBreeds.innerHTML += `<option value="${breed}">${breed}</option>`
     }
@@ -18,9 +17,16 @@ const getBreeds = async (url) => {
 }
 
 const getDog = async url => {
-    const response = await fetch(url)
-    const data = await response.json();
-    imgSelector.src = data.message;
+    try {
+        const response = await fetch(url)
+        const data = await response.json();
+        if (data.status === 'error'){
+            throw data.message;
+        }
+        imgSelector.src = data.message;
+    } catch (err) {
+        alert(`there was an error: ${err}`)
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
