@@ -9,7 +9,7 @@ input:focus{
 div{
     width: 80%;
     border: solid;
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
     background-color: lightcoral;
     overflow: hidden;
@@ -26,6 +26,8 @@ h1, input{
 
 img{
     max-width: 100%;
+    margin-bottom: 0;
+    max-height: 400px;
 }
 
 input[type=text], input[type=button], button {
